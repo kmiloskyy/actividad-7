@@ -12,17 +12,18 @@ const { state } = useRecepcionStore()
 const form = ref({ id_libro: '', cantidad: 0, estado: 'correcto', observacion: '' })
 
 
-const items = computed(() => (state?.items || []).filter(it => it.id_reception === props.idRecepcion))
+const items = computed(() => (state?.items || []).filter(it => it.id_recepcion === props.idRecepcion))
 
 function agregar(){
  const nuevoItem = {
     id: Date.now(),
     id_recepcion: props.idRecepcion,      
     id_libro: Number(form.value.id_libro),
-    cantidad: form.value.cantidad,          
+    cantidad: Number(form.value.cantidad),          
     estado: form.value.estado,
     observacion: form.value.observacion
  }
+    state.items.push(nuevoItem)
   }
   form.value = { id_libro: '', cantidad: 0, estado: 'correcto', observacion: '' }
 
