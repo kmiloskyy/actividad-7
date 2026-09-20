@@ -19,6 +19,19 @@ function guardar(){
   form.value = { fecha: '', nro_guia: '', id_proveedor: '' }
 }
 
+function calcularTotal(idRecepcion){
+  const itemsRecepcion = state.items.filter(it => it.id_recepcion === idRecepcion)
+  return itemsRecepcion.reduce((suma, item) => suma + item.cantidad, 0)
+}
+
+function calcularPorcentaje(idRecepcion) {
+    const itemsRecepcion = state.items.filter(it => it.id_recepcion === idRecepcion)
+    if (itemsRecepcion.length === 0) return 0 
+    const itemsProblema = itemsRecepcion.filter(it => it.estado === 'dañado' || it.estado === 'mixto')
+    const porcentaje = (itemsProblema.length / itemsRecepcion.length) * 100
+    return Math.round(porcentaje)
+}
+
 const lista = computed(() => state?.recepciones || [])
 
 </script>
@@ -49,8 +62,8 @@ const lista = computed(() => state?.recepciones || [])
           <td>{{ r.fecha }}</td>
           <td>{{ (state?.proveedores || []).find(p => p.id === r.id_proveedor)?.nombre || '—' }}</td>
           <td>{{ r.nro_guia }}</td>
-           <td>{{ 0 }}</td>              
-          <td>{{ NaN }}%</td>           
+          <td>{{ calcularTotal(r.id) }}</td>
+          <td>{{ calcularPorcentaje(r.id) }}%</td>         
           <td>
             <button @click="seleccion = r.id">Ver</button>
           </td>

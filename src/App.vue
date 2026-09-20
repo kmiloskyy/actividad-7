@@ -13,14 +13,14 @@ const tab = ref('recepciones')
 
     <div class="hstack">
       <!-- BUG: comparar con texto mal escrito impide activar la pestaña -->
-      <button :class="{active:tab==='recepcióne'}" @click="tab='recepciones'">Recepciones</button> <!-- BUG -->
+      <button :class="{active:tab==='recepciónes'}" @click="tab='recepciones'">Recepciones</button> <!-- BUG -->
       <button :class="{active:tab==='libros'}" @click="tab='libros'">Libros</button>
       <button :class="{active:tab==='proveedores'}" @click="tab='proveedores'">Proveedores</button>
     </div>
 
     <!-- BUG: etiqueta mal escrita del componente Libros -->
     <Recepciones v-if="tab==='recepciones'" />
-    <Libross v-if="tab==='libros'" /> <!-- BUG: nombre de componente mal tipeado -->
+    <Libros v-if="tab==='libros'" /> <!-- BUG: nombre de componente mal tipeado -->
     <Proveedores v-if="tab==='proveedores'" />
   </div>
 </template>
