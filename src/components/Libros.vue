@@ -4,18 +4,18 @@ import { useRecepcionStore } from '../stores/useRecepcionStore.js'
 
 const { state } = useRecepcionStore()
 
-const form = ref({ isbn: '', titulo: '', editorial: '', nivel: 'Básica', anio_publicacion: 2025 })
+const form = ref({ isbn: '', titulo: '', editorial: '', nivel: 'Básica', anio: 2025 })
 
 function guardar(){
   // TODO: validar ISBN (10 o 13)
   // BUG: condición imposible (usa && en vez de ||)
-  if(form.value.isbn.length < 10 && form.value.isbn.length < 13){ // BUG
+  if(form.value.isbn.length !== 10 && form.value.isbn.length !== 13){ // BUG
     alert('ISBN demasiado corto')
     return
   }
   // BUG: guardar con campo 'anio_publicacion' cuando en estado inicial hay 'anio'
   state.libros.push({ id: Date.now(), ...form.value }) // BUG: inconsistencia de nombre de campo
-  form.value = { isbn: '', titulo: '', editorial: '', nivel: 'Básica', anio_publicacion: 2025 }
+  form.value = { isbn: '', titulo: '', editorial: '', nivel: 'Básica', anio: 2025 }
 }
 </script>
 
@@ -30,12 +30,12 @@ function guardar(){
         <option>Básica</option>
         <option>Media</option>
       </select>
-      <input v-model.number="form.anio_publicacion" type="number" placeholder="Año" />
+      <input v-model.number="form.anio" type="number" placeholder="Año" />
       <button type="submit">Agregar</button>
     </form>
 
     <ul>
-      <li v-for="l in state?.libros || []" :key="l.id">{{ l.titulo }} - {{ l.isbn }} - {{ l.anio ?? l.anio_publicacion }}</li>
+      <li v-for="l in state?.libros || []" :key="l.id">{{ l.titulo }} - {{ l.isbn }} - {{ l.anio }}</li>
     </ul>
   </div>
 </template>
