@@ -12,7 +12,7 @@ function guardar(){
   
   if(!form.value.id_proveedor){
     alert('Seleccione proveedor')
-   
+    return
   }
   state.recepciones.push({ id: Date.now(), ...form.value })
   seleccion.value = state.recepciones[state.recepciones.length-1]?.id || null

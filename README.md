@@ -28,3 +28,9 @@ Debe ser compartido para mantener una unica fuente de la verdad, si el component
 1. Qué error tenia la validación:  La condicion utilizaba && para ver si el largo era menor a 10 y a 13, esto generaba que se permitieran ingresar isbn de 11, 12 o con más caracteres.  
 2. Qué correcion realizó: Se cambio la condicion a `length !== 10 && length !== 13`. Esto hace que se rechaze cualquier isbn con otro largo de caracteres. 
 3. Qué problema existía con el año del libro: Habia una inconsistencia en el nombrado de las propiedades, este usaba `anio_publicacion`. Se corrigio unificandolo a `anio`.
+
+# Gestión de recepciones
+
+1. Errores encontrados: La funcion encargada de guardar la informacion realizaba la validacion y emitia una alerta, pero no detenia la ejecución. Al faltar una sentencia de escape, el codigo continuaba y agregaba la recepcion invalida al listado.
+
+2. Cómo lo corrigió: Se añadió `return` despues de la alerta, esto asegura que la funcion se detenga por completo si la validación falla.
