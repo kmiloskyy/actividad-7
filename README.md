@@ -39,3 +39,21 @@ Debe ser compartido para mantener una unica fuente de la verdad, si el component
 1. Qué problema existía con el identificador de la recepción: Este buscaba la propiedad `id_reception` en vez de `id_recepcion` lo que generaba un error en la recepcion.
 2. Cómo solucionó el filtrado: Se actualizó la condición dentro del método `.filter()` para que compare correctamente `it.id_recepcion === props.idRecepcion`.
 3.  Cómo logró agregar correctamente un nuevo ítem: La funcion `agregar` construia el objeto `nuevoItem` pero no lo almacenaba en ningun lado. Se agrego `state.items.push(nuevoItem)` para insertarlo en el estado global.
+
+# Cálculos de recepción
+1. Cómo obtuvo el total: Se filtro el arreglo de items para obtener solo aquellos correspondientes al ID. Se utilizo el metodo `reduce()` para sumar la propiedad `cantidad` de cada uno de esos items, obteniendo asi el total exacto de libros ingresados.
+
+2. Cómo determinó los elementos con problemas: Se filtraron los items de la recepciin evaluando si su `estado` era estrictamente igual a `'dañado'` o `'mixto'`. La cantidad resultante se dividio por el total de registros de esa recepcion y se multiplico por 100 para obtener el porcentaje.
+
+3. Qué información utilizó para realizar el cálculo: Se usaron los datos compartidos del almacenamiento reactivo (`state.items`). Se cruzo el `id_recepcion` de los items con el `id` de las recepciones, y se opero matemáticamente sobre las propiedades `cantidad` y `estado` de esos objetos.
+
+## Parte 1 – Reutilización del proyecto
+
+* Elementos conservados: Se usara la estructura base, tambien conservamos el esqueleto estructural de `App.vue` para gestionar el enrutamiento.
+* Elementos modificados y eliminados: Se eliminaron los componentes del proyecto anterior (`Libros.vue`, `Proveedores.vue`, `Recepciones.vue`, `ItemsRecepcion.vue`) ya que no van en el nuevo caso de una empresa de servicios de consultoria tecnologica.
+* Por qué: Esta limpieza nos ayuda a reutilizar la arquitectura funcional de Vue adaptándola a los requisitos de un Single Page Application (SPA) informativo y comercial para la nueva empresa.
+
+## Parte 2 – Navegación y vistas
+
+* Vistas creadas: Se crearon los componentes `Inicio.vue`, `Nosotros.vue`, `Servicios.vue` y `Contacto.vue`.
+* Cómo funciona la navegación: Se implemento `vue-router` para que la aplicación sea una Single Page Application, tambien usamos `router.js` para las rutas de los componentes. se reemplazo el uso de `v-if` por `router-link`.
