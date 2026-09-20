@@ -1,8 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import Proveedores from './components/Proveedores.vue'
-import Libros from './components/Libros.vue'
-import Recepciones from './components/Recepciones.vue'
+
 
 const tab = ref('recepciones')
 </script>
