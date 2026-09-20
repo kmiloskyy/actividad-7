@@ -11,12 +11,12 @@ const state = reactive({
     { id: 1, fecha: '2025-09-01', nro_guia: 'G-55421', id_proveedor: 1 }
   ],
   items: [
-    { id: 1, id_reception: 1, id_libro: 1, cantidad: '450', estado: 'mixto', observacion: '5 libros arrugados' } // BUG: cantidad string
+    { id: 1, id_recepcion: 1, id_libro: 1, cantidad: 450, estado: 'mixto', observacion: '5 libros arrugados' } // BUG: cantidad string
   ],
   _seq: { proveedores: 2, libros: 2, recepciones: 2, items: 2 }
 })
 
 
 export function useRecepcionStore(){
-  return { /* state */ } 
+  return { state } 
 }
