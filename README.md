@@ -86,3 +86,6 @@ Debe ser compartido para mantener una unica fuente de la verdad, si el component
 * `req`: Es la representacion de la solicitud que hace un cliente, Tiene la informacion que el usuarios nos pide o que envia hacia el servidor.
 * `res`: Representa lo que nuestro servidor le va a devolver al cliente. Con esto podemos enviarle mensajes de texto, codigo HTML o datos en formato JSON.
 * `app.listen()`: Es la funcion que enciende el servidor. Le indica a Express que se quede escuchando activamente en un puerto específico esperando a que lleguen peticiones, para que el programa no se cierre de inmediato.
+
+## Parte 5 – Datos de servicios
+Cada servicio de la lista contiene la siguiente información detallada: un `id` numerico unico, el `nombre` del servicio, su `categoria`, una `descripcion` tecnica de las herramientas o procesos utilizados, el `precio` referencial en formato de numero entero, y un valor booleano en `disponible` que indica si el servicio puede ser solicitado en este momento o si la agenda esta llena, se usa `module.exports` para exportar esta informacion y poder consumirla desde mi servidor principal.
