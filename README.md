@@ -75,3 +75,8 @@ Debe ser compartido para mantener una unica fuente de la verdad, si el component
 * Colores y estilo corporativo: Se cambiaron los colores en relacion a una empresa tecnologica. Para que el diseño sea coherente, tambien se cambio el color de las tarjetas de los servicios y las cajas de texto del formulario.
 * Mejoras en el contenido: Se agrego informacion en las vista de `Inicio` e `Nosotros`, tambien se alinearon los textos para tener un mejor orden.
 * Orden de los servicios: Se ajuste la manera en la que se muestran las tarjetas para que quede mas ordenado visualmente.
+
+# Actividad 9
+## Parte 1 y 2 - Preparacion del backend
+* Se usaron los comandos `mkdir backend`, `npm init -y`y `npm install express`.
+* el comando `npm init -y` creo el archivo `package.json` donde se registra la informacion y dependencias del backend. Ademas, se instalo express que es un framework para Node.js que facilita la creacion del servidor web, el manejo de rutas y la construcción de la API.
