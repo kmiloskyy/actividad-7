@@ -30,7 +30,6 @@ Debe ser compartido para mantener una unica fuente de la verdad, si el component
 3. Qué problema existía con el año del libro: Habia una inconsistencia en el nombrado de las propiedades, este usaba `anio_publicacion`. Se corrigio unificandolo a `anio`.
 
 # Gestión de recepciones
-
 1. Errores encontrados: La funcion encargada de guardar la informacion realizaba la validacion y emitia una alerta, pero no detenia la ejecución. Al faltar una sentencia de escape, el codigo continuaba y agregaba la recepcion invalida al listado.
 
 2. Cómo lo corrigió: Se añadió `return` despues de la alerta, esto asegura que la funcion se detenga por completo si la validación falla.
@@ -48,12 +47,15 @@ Debe ser compartido para mantener una unica fuente de la verdad, si el component
 3. Qué información utilizó para realizar el cálculo: Se usaron los datos compartidos del almacenamiento reactivo (`state.items`). Se cruzo el `id_recepcion` de los items con el `id` de las recepciones, y se opero matemáticamente sobre las propiedades `cantidad` y `estado` de esos objetos.
 
 ## Parte 1 – Reutilización del proyecto
-
 * Elementos conservados: Se usara la estructura base, tambien conservamos el esqueleto estructural de `App.vue` para gestionar el enrutamiento.
 * Elementos modificados y eliminados: Se eliminaron los componentes del proyecto anterior (`Libros.vue`, `Proveedores.vue`, `Recepciones.vue`, `ItemsRecepcion.vue`) ya que no van en el nuevo caso de una empresa de servicios de consultoria tecnologica.
 * Por qué: Esta limpieza nos ayuda a reutilizar la arquitectura funcional de Vue adaptándola a los requisitos de un Single Page Application (SPA) informativo y comercial para la nueva empresa.
 
 ## Parte 2 – Navegación y vistas
-
 * Vistas creadas: Se crearon los componentes `Inicio.vue`, `Nosotros.vue`, `Servicios.vue` y `Contacto.vue`.
 * Cómo funciona la navegación: Se implemento `vue-router` para que la aplicación sea una Single Page Application, tambien usamos `router.js` para las rutas de los componentes. se reemplazo el uso de `v-if` por `router-link`.
+
+## Parte 3 – Catálogo de servicios y componentes
+* Organización de los servicios: Los datos del catalogo se almacenan en el archivo `useServiciosStore.js` utilizando la reactividad de Vue. Esto permite que la lista de servicios esté separada de la vista y sea fácil de mantener o actualizar en el futuro.
+* Componente reutilizable: El componente `ServicioCard.vue` sirve para representar visualmente cada servicio del catálogo de forma individual para no tener que repetirlos.
+* Uso de Props: La vista padre `Servicios.vue` utiliza un `v-for` para iterar sobre el arreglo del store y le envia un objeto completo a cada componente hijo a través de la prop `:item`. El hijo `ServicioCard.vue` recibe esta informacion estructurada para renderizar el nombre, categoria, descripcion, precio y la disponibilidad.
