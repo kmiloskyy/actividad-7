@@ -4,7 +4,6 @@ import { useServiciosStore } from '../stores/useServiciosStore.js'
 
 const { state } = useServiciosStore()
 
-// Objeto reactivo para el formulario
 const form = ref({
   nombre: '',
   correo: '',

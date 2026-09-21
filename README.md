@@ -47,6 +47,7 @@ Debe ser compartido para mantener una unica fuente de la verdad, si el component
 
 3. Qué información utilizó para realizar el cálculo: Se usaron los datos compartidos del almacenamiento reactivo (`state.items`). Se cruzo el `id_recepcion` de los items con el `id` de las recepciones, y se opero matemáticamente sobre las propiedades `cantidad` y `estado` de esos objetos.
 
+# Actividad 8
 ## Parte 1 – Reutilización del proyecto
 * Elementos conservados: Se usara la estructura base, tambien conservamos el esqueleto estructural de `App.vue` para gestionar el enrutamiento.
 * Elementos modificados y eliminados: Se eliminaron los componentes del proyecto anterior (`Libros.vue`, `Proveedores.vue`, `Recepciones.vue`, `ItemsRecepcion.vue`) ya que no van en el nuevo caso de una empresa de servicios de consultoria tecnologica.
