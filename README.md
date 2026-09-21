@@ -64,3 +64,7 @@ Debe ser compartido para mantener una unica fuente de la verdad, si el component
 * Filtro de búsqueda: Se agrego una barra de texto en la vista de servicios y la conecte con un `v-model` para atrapar lo que el visitante va escribiendo en tiempo real.
 * Condición utilizada: Para que la lista se filtre automaticamente, use una función `computed`. Esta función revisa si el texto coincide con el nombre o la categoría de algun servicio, sin borrar los datos originales. También use un bloque `v-if` y `v-else` porque si escribes algo que no existe, la grilla se oculte y salga un mensaje diciendo que no se encontraron resultados.
 * Comunicación con emit: El boton de "Me interesa" solo se muestra si el servicio esta disponible. Cuando haces clic en el boton, el componente hijo usa `$emit` para avisarle al padre el nombre del servicio que elegiste. Asi el padre lo recibe y muestra un aviso en pantalla confirmando tu seleccion.
+
+## Parte 5 – Formulario de contacto
+* Campos y validaciones: Se coloco un formulario con `v-model` que incluye nombre, correo, telefono, servicio de interes y mensaje. Este tambien tiene una funcion que verifica que ningun campo este vacio para que no falte informacion.
+* Relación con el servicio seleccionado: Se creo una propiedad `servicioSeleccionado` que al hacer clic en "Me interesa" en el catalogo, el nombre del servicio se guarda globalmente, luego parte de `Contacto.vue` revisa si existe ese servicio y lo asigna automaticamente al formulario.

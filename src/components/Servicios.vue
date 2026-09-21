@@ -6,7 +6,6 @@ import ServicioCard from './ServicioCard.vue'
 const { state } = useServiciosStore()
 
 const textoBusqueda = ref('')
-const servicioSeleccionado = ref(null)
 
 const serviciosFiltrados = computed(() => {
   const lista = state?.servicios || []
@@ -18,16 +17,16 @@ const serviciosFiltrados = computed(() => {
     return nombre.toLowerCase().includes(busqueda) || categoria.toLowerCase().includes(busqueda)
   })
 })
-
 function manejarSeleccion(nombre) {
-  servicioSeleccionado.value = nombre
+  state.servicioSeleccionado = nombre
+  alert(`Seleccionaste: ${nombre}. Ve a la pestaña Contacto para solicitarlo.`)
 }
 </script>
 
 <template>
   <div>
     <h2>Catálogo de Servicios</h2>
-    
+
     <div style="margin-bottom: 20px;">
       <input 
         v-model="textoBusqueda" 
@@ -35,10 +34,6 @@ function manejarSeleccion(nombre) {
         placeholder="Buscar por nombre o categoría..." 
         style="width: 100%; padding: 8px; border-radius: 4px; background-color: #333; color: white; border: 1px solid #555;"
       />
-    </div>
-
-    <div v-if="servicioSeleccionado" style="background-color: #1a4d2e; padding: 10px; margin-bottom: 20px; border-radius: 4px;">
-      Has seleccionado: <strong>{{ servicioSeleccionado }}</strong>. Ve a la pestaña Contacto para solicitarlo.
     </div>
 
     <div v-if="serviciosFiltrados.length > 0" class="grilla-servicios">
@@ -49,10 +44,10 @@ function manejarSeleccion(nombre) {
         @seleccionar="manejarSeleccion" 
       />
     </div>
+    
     <div v-else style="color: #ff9999;">
       No se encontraron servicios que coincidan con "{{ textoBusqueda }}".
     </div>
-
   </div>
 </template>
 
