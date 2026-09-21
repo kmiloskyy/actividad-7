@@ -80,3 +80,9 @@ Debe ser compartido para mantener una unica fuente de la verdad, si el component
 ## Parte 1 y 2 - Preparacion del backend
 * Se usaron los comandos `mkdir backend`, `npm init -y`y `npm install express`.
 * el comando `npm init -y` creo el archivo `package.json` donde se registra la informacion y dependencias del backend. Ademas, se instalo express que es un framework para Node.js que facilita la creacion del servidor web, el manejo de rutas y la construcción de la API.
+
+## Parte 3 y 4 - Primer servidor
+* `app.get()`: Se usa para definir las rutas de la aplicacion, le dice al servidor como debe responder cuando el usuario intenta acceder a la URL especifica.
+* `req`: Es la representacion de la solicitud que hace un cliente, Tiene la informacion que el usuarios nos pide o que envia hacia el servidor.
+* `res`: Representa lo que nuestro servidor le va a devolver al cliente. Con esto podemos enviarle mensajes de texto, codigo HTML o datos en formato JSON.
+* `app.listen()`: Es la funcion que enciende el servidor. Le indica a Express que se quede escuchando activamente en un puerto específico esperando a que lleguen peticiones, para que el programa no se cierre de inmediato.
