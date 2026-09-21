@@ -1,3 +1,4 @@
+# Problemas detectados
 1. Problema Detectado: Hoja de estilo invocada por el nombre incorrecto.
     Archivo: Main.js
     Posible causa: Style mal escrito. 
@@ -68,3 +69,8 @@ Debe ser compartido para mantener una unica fuente de la verdad, si el component
 ## Parte 5 – Formulario de contacto
 * Campos y validaciones: Se coloco un formulario con `v-model` que incluye nombre, correo, telefono, servicio de interes y mensaje. Este tambien tiene una funcion que verifica que ningun campo este vacio para que no falte informacion.
 * Relación con el servicio seleccionado: Se creo una propiedad `servicioSeleccionado` que al hacer clic en "Me interesa" en el catalogo, el nombre del servicio se guarda globalmente, luego parte de `Contacto.vue` revisa si existe ese servicio y lo asigna automaticamente al formulario.
+
+## Parte 6 – Diseño y revisión final
+* Colores y estilo corporativo: Se cambiaron los colores en relacion a una empresa tecnologica. Para que el diseño sea coherente, tambien se cambio el color de las tarjetas de los servicios y las cajas de texto del formulario.
+* Mejoras en el contenido: Se agrego informacion en las vista de `Inicio` e `Nosotros`, tambien se alinearon los textos para tener un mejor orden.
+* Orden de los servicios: Se ajuste la manera en la que se muestran las tarjetas para que quede mas ordenado visualmente.

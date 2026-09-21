@@ -32,7 +32,7 @@ function manejarSeleccion(nombre) {
         v-model="textoBusqueda" 
         type="text" 
         placeholder="Buscar por nombre o categoría..." 
-        style="width: 100%; padding: 8px; border-radius: 4px; background-color: #333; color: white; border: 1px solid #555;"
+        style="width: 100%; padding: 8px; border-radius: 4px; background-color: #d1d1d1; color: black; border: 1px solid #000000;"
       />
     </div>
 
@@ -54,8 +54,8 @@ function manejarSeleccion(nombre) {
 <style scoped>
 .grilla-servicios {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 16px;
-  margin-top: 20px;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px;
+  margin-top: 30px;
 }
 </style>

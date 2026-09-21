@@ -77,38 +77,52 @@ function procesarFormulario() {
 .formulario {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
   max-width: 500px;
-  margin-top: 20px;
+  margin: 30px auto 0;
+  text-align: left;
 }
 .formulario input, .formulario select, .formulario textarea {
-  padding: 10px;
-  border-radius: 4px;
-  border: 1px solid #555;
-  background-color: #333;
-  color: white;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  background-color: #1e293b; 
+  color: #f8fafc;
+  font-family: inherit;
+  transition: border-color 0.3s;
+}
+.formulario input:focus, .formulario select:focus, .formulario textarea:focus {
+  outline: none;
+  border-color: #38bdf8; 
 }
 .alerta-error {
-  color: #ff9999;
-  background-color: #4a1919;
-  padding: 10px;
-  border-radius: 4px;
+  color: #fca5a5;
+  background-color: #7f1d1d;
+  padding: 12px;
+  border-radius: 6px;
 }
 .resumen-exito {
-  background-color: #1a4d2e;
-  padding: 20px;
+  background-color: #064e3b; 
+  padding: 24px;
   border-radius: 8px;
   margin-top: 20px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
 }
 .btn-enviar {
-  padding: 10px;
-  background-color: #2563eb;
+  padding: 12px;
+  background-color: #0284c7;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: 0.3s;
 }
 .btn-enviar:hover {
-  background-color: #1d4ed8;
+  background-color: #0369a1;
 }
 </style>

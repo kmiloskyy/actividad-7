@@ -32,11 +32,37 @@ defineEmits(['seleccionar'])
 
 <style scoped>
 .tarjeta-servicio {
-  border: 1px solid #444;
-  padding: 16px;
+  background-color: #1e293b; 
+  border: 1px solid #334155; 
+  padding: 24px;
   border-radius: 8px;
-  margin-bottom: 16px;
-  background-color: #2a2a2a;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.tarjeta-servicio h3 {
+  color: #f8fafc;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+.tarjeta-servicio p {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  margin: 5px 0;
+}
+button {
+  background-color: #0284c7;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-top: 15px;
+  transition: 0.3s;
+}
+button:hover {
+  background-color: #0369a1;
 }
 </style>
 
