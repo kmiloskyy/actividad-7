@@ -59,3 +59,8 @@ Debe ser compartido para mantener una unica fuente de la verdad, si el component
 * Organización de los servicios: Los datos del catalogo se almacenan en el archivo `useServiciosStore.js` utilizando la reactividad de Vue. Esto permite que la lista de servicios esté separada de la vista y sea fácil de mantener o actualizar en el futuro.
 * Componente reutilizable: El componente `ServicioCard.vue` sirve para representar visualmente cada servicio del catálogo de forma individual para no tener que repetirlos.
 * Uso de Props: La vista padre `Servicios.vue` utiliza un `v-for` para iterar sobre el arreglo del store y le envia un objeto completo a cada componente hijo a través de la prop `:item`. El hijo `ServicioCard.vue` recibe esta informacion estructurada para renderizar el nombre, categoria, descripcion, precio y la disponibilidad.
+
+## Parte 4 – Filtros, condicionales e interacción
+* Filtro de búsqueda: Se agrego una barra de texto en la vista de servicios y la conecte con un `v-model` para atrapar lo que el visitante va escribiendo en tiempo real.
+* Condición utilizada: Para que la lista se filtre automaticamente, use una función `computed`. Esta función revisa si el texto coincide con el nombre o la categoría de algun servicio, sin borrar los datos originales. También use un bloque `v-if` y `v-else` porque si escribes algo que no existe, la grilla se oculte y salga un mensaje diciendo que no se encontraron resultados.
+* Comunicación con emit: El boton de "Me interesa" solo se muestra si el servicio esta disponible. Cuando haces clic en el boton, el componente hijo usa `$emit` para avisarle al padre el nombre del servicio que elegiste. Asi el padre lo recibe y muestra un aviso en pantalla confirmando tu seleccion.
