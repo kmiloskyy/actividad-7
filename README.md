@@ -89,3 +89,7 @@ Debe ser compartido para mantener una unica fuente de la verdad, si el component
 
 ## Parte 5 – Datos de servicios
 Cada servicio de la lista contiene la siguiente información detallada: un `id` numerico unico, el `nombre` del servicio, su `categoria`, una `descripcion` tecnica de las herramientas o procesos utilizados, el `precio` referencial en formato de numero entero, y un valor booleano en `disponible` que indica si el servicio puede ser solicitado en este momento o si la agenda esta llena, se usa `module.exports` para exportar esta informacion y poder consumirla desde mi servidor principal.
+
+## Parte 6 – API de servicios
+* `res.send()`: Se utiliza en la ruta principal para enviar una respuesta generica y sencilla, que en este caso es solo un texto plano confirmando que el servidor está encendido.
+* `res.json()`: se utiliza en la nueva ruta de la API para enviar el arreglo completo de los servicios de la empresa, pero formateado específicamente como JSON.

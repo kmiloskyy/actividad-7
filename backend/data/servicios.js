@@ -20,7 +20,7 @@ const servicios = [
         nombre: 'Análisis de Malware en Sandbox',
         categoria: 'Ciberseguridad',
         descripcion: 'Análisis de comportamiento de software malicioso y ransomware en entornos controlados.',
-        precio: 649990,
+        precio: 349990,
         disponible: false
     },
     {
@@ -36,7 +36,7 @@ const servicios = [
         nombre: 'Optimización de Bases de Datos',
         categoria: 'Desarrollo',
         descripcion: 'Refactorización, diagramas Entidad-Relación y mejora de rendimiento en MySQL/MariaDB.',
-        precio: 349990,
+        precio: 399990,
         disponible: true
     },
     {
@@ -49,4 +49,4 @@ const servicios = [
     }
 ]
 
-module.exports = servicios
+module.exports = servicios;
