@@ -93,3 +93,8 @@ Cada servicio de la lista contiene la siguiente información detallada: un `id` 
 ## Parte 6 – API de servicios
 * `res.send()`: Se utiliza en la ruta principal para enviar una respuesta generica y sencilla, que en este caso es solo un texto plano confirmando que el servidor está encendido.
 * `res.json()`: se utiliza en la nueva ruta de la API para enviar el arreglo completo de los servicios de la empresa, pero formateado específicamente como JSON.
+
+## Parte 7 - Consulta por ID
+* `req.params`: Es una propiedad de Express que nos permite capturar los valores dinamicos que el usuario escribe directamente en la URL. En este caso, atrapa el número de ID que el cliente esta buscando.
+* `Number()`: Todo lo que capturamos de la URL usando `req.params` llega automáticamente en formato de text entonces usamos la función `Number()` para convertir ese texto a un valor numérico real. Esto es indispensable porque dentro de nuestro archivo `servicios.js`, los IDs estan guardados como numeros, y si no hacemos la conversion, la búsqueda no encontraria coincidencias.
+* Estado 404: Es un bloque condicional por si el usuario busca un ID que no tenemos. Si el servicio no existe, el servidor responde con un estado `404`.
