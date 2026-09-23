@@ -102,3 +102,6 @@ Cada servicio de la lista contiene la siguiente información detallada: un `id` 
 ## Parte 8 – Filtro por categoría
 * `req.params`: Lo usamos cuando el dato es una parte estructural y obligatoria de la ruta (por ejemplo, `/api/servicios/2`). Sirve principalmente para identificar y buscar un recurso especifico, como buscar por un ID.
 * `req.query` : Lo usamos para atrapar parametros opcionales que se agregan al final de la URL despues de un signo de interrogación `?`. Es ideal para aplicar filtros, ordenar o hacer busquedas sobre una lista general sin alterar la ruta principal.
+
+## Parte 9 – Middleware JSON
+Esta linea de codigo funciona como un "middleware" (un intermediario o traductor automático) que le permite a Express leer, interpretar y transformar los datos que lleguen en formato JSON para que podamos manipularlos facilmente en nuestro codigo.
