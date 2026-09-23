@@ -46,6 +46,22 @@ const servicios = [
         descripcion: 'Implementación de algoritmos KNN y árboles de decisión para análisis estadístico.',
         precio: 449990,
         disponible: false
+    },
+    {
+        id: 7,
+        nombre: 'Desarrollo de Interfaces Web',
+        categoria: 'Desarrollo',
+        descripcion:'Creación de aplicaciones frontend interactivas y dinámicas utilizando frameworks como React, Angular o Vue.js.',
+        precio: 549990,
+        disponible: true
+    },
+    {
+        id: 8,
+        nombre: 'Test de Pentesting',
+        categoria: 'Ciberseguridad',
+        descripcion: 'Simulación de ataques controlados para identificar brechas de seguridad.',
+        precio: 899990,
+        disponible: true
     }
 ]
 

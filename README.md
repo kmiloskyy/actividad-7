@@ -105,3 +105,10 @@ Cada servicio de la lista contiene la siguiente información detallada: un `id` 
 
 ## Parte 9 – Middleware JSON
 Esta linea de codigo funciona como un "middleware" (un intermediario o traductor automático) que le permite a Express leer, interpretar y transformar los datos que lleguen en formato JSON para que podamos manipularlos facilmente en nuestro codigo.
+
+## Parte 12 – Pruebas finales
+* Inicio: Se uso `node server.js` para verificar el funcionamiento del servidor.
+* Ruta raiz: Al ingresar a `http://localhost:3000/`, el navegador respondio exitosamente con el mensaje "Servidor de empresa funcionando correctamente".
+* Catalogo Completo: Se probo que la ruta devuelve el arreglo completo en formato JSON con los 8 servicios propios de RodSal Solutions, incluyendo las categorias y precios personalizados al rubro informatico.
+* Consulta ID: Al usar `http://localhost:3000/api/servicios/1`, el servidor devolvio los datos del primer servicio. Al probar con la ruta `http://localhost:3000/api/servicios/999`, el sistema mostro correctamente que no existe y devolvio un error HTTP 404 con el mensaje "Servicio no encontrado".
+* Filtro de Categorias: Al probar con la URL `http://localhost:3000/api/servicios?categoria=Ciberseguridad`, el servidor filtróola información y devolvio solo los servicios correspondientes a esa categoria.
