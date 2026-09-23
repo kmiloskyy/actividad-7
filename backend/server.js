@@ -8,21 +8,22 @@ app.get('/', (req, res) => {
   res.send('Servidor de empresa funcionando correctamente')
 })
 
-app.get('/api/servicios/:id', (req, res) => {
+app.get('/api/servicios', (req, res) => {
 
-  const id = Number(req.params.id)
+  const categoria = req.query.categoria
 
-  const servicio = servicios.find(
-    item => item.id === id
-  )
+  if (categoria) {
 
-  if (!servicio) {
-    return res.status(404).json({
-      mensaje: 'Servicio no encontrado'
-    })
+    const resultado = servicios.filter(
+      servicio =>
+        servicio.categoria.toLowerCase() ===
+        categoria.toLowerCase()
+    )
+
+    return res.json(resultado)
   }
 
-  res.json(servicio)
+  res.json(servicios)
 })
 
 app.listen(PORT, () => {

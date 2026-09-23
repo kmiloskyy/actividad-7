@@ -98,3 +98,7 @@ Cada servicio de la lista contiene la siguiente información detallada: un `id` 
 * `req.params`: Es una propiedad de Express que nos permite capturar los valores dinamicos que el usuario escribe directamente en la URL. En este caso, atrapa el número de ID que el cliente esta buscando.
 * `Number()`: Todo lo que capturamos de la URL usando `req.params` llega automáticamente en formato de text entonces usamos la función `Number()` para convertir ese texto a un valor numérico real. Esto es indispensable porque dentro de nuestro archivo `servicios.js`, los IDs estan guardados como numeros, y si no hacemos la conversion, la búsqueda no encontraria coincidencias.
 * Estado 404: Es un bloque condicional por si el usuario busca un ID que no tenemos. Si el servicio no existe, el servidor responde con un estado `404`.
+
+## Parte 8 – Filtro por categoría
+* `req.params`: Lo usamos cuando el dato es una parte estructural y obligatoria de la ruta (por ejemplo, `/api/servicios/2`). Sirve principalmente para identificar y buscar un recurso especifico, como buscar por un ID.
+* `req.query` : Lo usamos para atrapar parametros opcionales que se agregan al final de la URL despues de un signo de interrogación `?`. Es ideal para aplicar filtros, ordenar o hacer busquedas sobre una lista general sin alterar la ruta principal.
