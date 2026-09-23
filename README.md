@@ -76,6 +76,13 @@ Debe ser compartido para mantener una unica fuente de la verdad, si el component
 * Mejoras en el contenido: Se agrego informacion en las vista de `Inicio` e `Nosotros`, tambien se alinearon los textos para tener un mejor orden.
 * Orden de los servicios: Se ajuste la manera en la que se muestran las tarjetas para que quede mas ordenado visualmente.
 
+## Nombre
+* Camilo Rodriguez Saldaña
+
+## Informacion de la empresa
+* Nombre de la Empresa: Rodsal Solutions 
+* Rubro: Consultoría en Ingeniería de Software, Ciberseguridad y Análisis de Datos.
+
 # Actividad 9
 ## Parte 1 y 2 - Preparacion del backend
 * Se usaron los comandos `mkdir backend`, `npm init -y`y `npm install express`.
@@ -112,3 +119,14 @@ Esta linea de codigo funciona como un "middleware" (un intermediario o traductor
 * Catalogo Completo: Se probo que la ruta devuelve el arreglo completo en formato JSON con los 8 servicios propios de RodSal Solutions, incluyendo las categorias y precios personalizados al rubro informatico.
 * Consulta ID: Al usar `http://localhost:3000/api/servicios/1`, el servidor devolvio los datos del primer servicio. Al probar con la ruta `http://localhost:3000/api/servicios/999`, el sistema mostro correctamente que no existe y devolvio un error HTTP 404 con el mensaje "Servicio no encontrado".
 * Filtro de Categorias: Al probar con la URL `http://localhost:3000/api/servicios?categoria=Ciberseguridad`, el servidor filtróola información y devolvio solo los servicios correspondientes a esa categoria.
+
+## Instrucciones para ejecutar el backend
+Para encender el servidor y probar la API localmente, sigue estos sencillos pasos:
+1. Abre una terminal y asegúrate de estar dentro de la carpeta del servidor: `cd backend`
+2. Instala las dependencias del proyecto (solo si acabas de clonar el repositorio): `npm install`
+3. Enciende el servidor ejecutando: `node server.js`
+4. Abre tu navegador y visita `http://localhost:3000/api/servicios` para ver los datos.
+*Nota: Para detener el servidor, presiona `Ctrl + C` en la terminal.*
+
+## Reflexión final
+El hacer esta actividad ayuda a entender el proceso de pasar de un entorno visual en el frontend a diseñar la logica de una app. La creacion de esta API REST nos permite a aplicar consejos y practicas fundamentales de la ing web, esto viene siendo la base para contruir sistemas informaticos escalables y capaces de integrase a bases de datos.
